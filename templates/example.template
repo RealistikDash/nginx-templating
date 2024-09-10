@@ -1,0 +1,8 @@
+server {
+    listen 80;
+    server_name a.${SERVER_DOMAIN};
+
+    location / {
+        proxy_pass http://${SERVER_PROXY_TARGET}/example;
+    }
+}

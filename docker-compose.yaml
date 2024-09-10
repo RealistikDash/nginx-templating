@@ -1,0 +1,11 @@
+services:
+  nginx:
+    image: nginx-templated:latest
+    restart: always
+    ports:
+      - 80:80
+    volumes:
+      - ./templates:/templates:ro
+    environment:
+      - SERVER_DOMAIN=localhost
+      - SERVER_PROXY_TARGET=1.1.1.1
